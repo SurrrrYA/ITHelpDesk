@@ -3,6 +3,8 @@
 .env.*
 !.env.example
 info.md
+progres.md
+PRD.md
 
 # Dependensi dan hasil build
 node_modules/
