@@ -1,0 +1,17 @@
+# Rahasia
+.env
+.env.*
+!.env.example
+info.md
+
+# Dependensi dan hasil build
+node_modules/
+vendor/
+dist/
+
+# File sistem
+.DS_Store
+Thumbs.db
+
+# Log
+*.log
