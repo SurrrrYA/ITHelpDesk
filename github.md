@@ -20,6 +20,9 @@ Sumber kebenaran tetap `git log`; file ini adalah ringkasan yang mudah dibaca.
 | 5 | 2026-11-11 | `7a461b1` | feat(web): SPA React untuk karyawan, teknisi, dan admin | Seluruh frontend: React 19 + TS + Vite + Tailwind v4, login, tiket, dashboard Recharts, master data, knowledge base, aset, real-time Echo | 62 file, +8.639 |
 | 6 | 2026-11-11 | `77c7b80` | ci: workflow test backend dan build frontend | GitHub Actions: PHP 8.2 + PostgreSQL 18 (Pest, Pint) dan Node 22 (lint, build) | 1 file, +98 |
 | 7 | 2026-11-11 | `0f1d3bd` | docs: README bahasa Indonesia dan panduan per repo | README utama + README `helpdesk-api` dan `helpdesk-web` | 2 file, +395 / −22 |
+| 8 | 2026-11-11 | `a87f66e` | docs: tambah github.md untuk riwayat commit | Changelog commit: tabel ringkasan, rincian per commit, dan cara memperbarui | 1 file, +95 |
+| 9 | 2026-11-11 | `65a4234` | ci: tampilkan detail kegagalan test lewat annotation | Menampilkan baris error Pest sebagai annotation agar mudah dibaca dari API/UI | 1 file, +14 / −1 |
+| 10 | 2026-11-11 | `8c11085` | fix(test): hapus testsuite Unit yang tidak dipakai | CI gagal karena `tests/Unit` tidak ikut ter-commit (folder kosong); suite Unit dihapus dari `phpunit.xml` | 1 file, −3 |
 
 ---
 
@@ -62,6 +65,22 @@ Sumber kebenaran tetap `git log`; file ini adalah ringkasan yang mudah dibaca.
 - README utama: fitur per role, teknologi, arsitektur, alur tiket, struktur database, keputusan teknis, cara menjalankan, akun demo, testing, deployment.
 - README per repo untuk `helpdesk-api` dan `helpdesk-web`.
 - **File utama:** `README.md`, `helpdesk-web/README.md`, `helpdesk-api/README.md`.
+
+### 8. `a87f66e` — docs: tambah github.md untuk riwayat commit
+
+- Changelog commit: tabel ringkasan (hash, tanggal, pesan, jumlah file), rincian per commit, dan panduan memperbarui.
+- **File utama:** `github.md`.
+
+### 9. `65a4234` — ci: tampilkan detail kegagalan test lewat annotation
+
+- Saat test gagal, baris error penting dan 8 baris terakhir log ditampilkan sebagai annotation GitHub Actions.
+- **File utama:** `.github/workflows/ci.yml`.
+
+### 10. `8c11085` — fix(test): hapus testsuite Unit yang tidak dipakai
+
+- CI run pertama gagal (exit code 2) karena `phpunit.xml` mendeklarasikan `tests/Unit`, sedangkan folder kosong itu tidak ikut ter-commit.
+- Solusi: hapus testsuite `Unit`; seluruh test memang ada di `tests/Feature`.
+- **File utama:** `helpdesk-api/phpunit.xml`.
 
 ---
 
